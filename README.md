@@ -9,7 +9,7 @@ $ yarn install
 ```
 To run the project use
 ```bash
-$ npm run start-dev
+$ npm start
 ```
 starting the project using yarn
 ```bash
