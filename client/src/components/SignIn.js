@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 import * as actions from '../actions';
@@ -11,7 +12,6 @@ class SignIn extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
- 
     this.responseFacebook = this.responseFacebook.bind(this);
   }
 
@@ -21,6 +21,8 @@ class SignIn extends Component {
       this.props.history.push('/dashboard');
     }
   }
+
+ 
 
   async responseFacebook(res) {
     await this.props.oauthFacebook(res.accessToken);
@@ -65,10 +67,10 @@ class SignIn extends Component {
         <div className="col">
           <div className="text-center">
             <div className="alert alert-primary">
-              Login with Facebook
+              Or sign in using third-party services
             </div>
             <FacebookLogin
-              appId="string"
+              appId="642246559554873"
               render={renderProps => (
                 <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
               )}
@@ -76,6 +78,7 @@ class SignIn extends Component {
               callback={this.responseFacebook}
               cssClass="btn btn-outline-primary"
             />
+            
           </div>
         </div>
       </div>

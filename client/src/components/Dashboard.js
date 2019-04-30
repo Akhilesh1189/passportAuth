@@ -9,31 +9,47 @@ class Dashboard extends Component {
     this.props.getDashboard()
   }
 
+  linkFacebook = async (res) => {
+    console.log('Link with Facebook', res)  
+    await this.props.linkFacebook(res.accessToken);
+  }
   
-
+  unlinkFacebook = async (res) => {
+    console.log('Unlink Facebook')  
+    await this.props.unlinkFacebook();
+  }
 
   render() {
     return (
       <div>
-        This is a Dashboard component User Login sucessfully!!
+        This is a Dashboard component
         <br/>
+        Our secret: <h3>{this.props.secret}</h3>
 
-
-        <h2>Login with Facebook accounts</h2>
+        <h2>Link your social media accounts</h2>
+      
         <FacebookLogin
-          appId="171335970085090"
-          disabled={true}
-          render={renderProps => (
-            <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick} disabled={this.props.dashboard.methods.includes('facebook') ? true : false}>Link with Facebook</button>
-          )}
-          fields="name,email,picture"
-          callback={this.linkFacebook}
-          cssClass="btn btn-outline-primary"
-        />
+  appId="642246559554873"
+  autoLoad={true}
+        fields="name,email,picture"
+  callback={this.linkFacebook}
+  render={renderProps => (
+    <button onClick={renderProps.onClick}>This is my custom FB button</button>
+  )}
+/>
+       
         <br />
         <br />
         <br />
-
+        <h2>Unlink your social media accounts</h2>
+        <button 
+          style={{ marginRight: 15 }} 
+          className="btn btn-primary" 
+          onClick={ () => this.unlinkFacebook() } 
+          disabled={ this.props.dashboard.methods.includes('facebook') ? false : true }
+        >
+          Unlink with Facebook
+        </button>
       </div>
     );
   }

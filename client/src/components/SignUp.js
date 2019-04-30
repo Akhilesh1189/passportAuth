@@ -21,6 +21,7 @@ class SignUp extends Component {
     }
   }
 
+ 
 
   async responseFacebook(res) {
     await this.props.oauthFacebook(res.accessToken);
@@ -41,7 +42,7 @@ class SignUp extends Component {
                 type="text"
                 id="email"
                 label="Enter your email"
-                placeholder="email@example.com"
+                placeholder="example@example.com"
                 component={ CustomInput } />
             </fieldset>
             <fieldset>
@@ -50,7 +51,7 @@ class SignUp extends Component {
                 type="password"
                 id="password"
                 label="Enter your password"
-                placeholder="password"
+                placeholder="yoursuperpassword"
                 component={ CustomInput } />
             </fieldset>
 
@@ -68,7 +69,7 @@ class SignUp extends Component {
               Or sign up using third-party services
             </div>
             <FacebookLogin
-              appId="string"
+              appId="642246559554873"
               render={renderProps => (
                 <button style={{ marginRight: 15 }} className="btn btn-primary" onClick={renderProps.onClick}>Facebook</button>
               )}

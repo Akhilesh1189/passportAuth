@@ -4,11 +4,9 @@ import {
   AUTH_SIGN_OUT, 
   AUTH_SIGN_IN,
   AUTH_LINK_FACEBOOK,
-
   AUTH_UNLINK_FACEBOOK, 
   AUTH_ERROR,
   DASHBOARD_GET_DATA } from './types';
-
 
 
 
