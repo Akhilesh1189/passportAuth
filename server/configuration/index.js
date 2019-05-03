@@ -4,8 +4,8 @@ if (process.env.NODE_ENV === 'test') {
     JWT_SECRET: 'codeworkrauthentication',
     oauth: {
       facebook: {
-        clientID: '642246559554873',
-        clientSecret: 'de9378a0b728fc7fa3d7463bfd738231',
+        clientID: '',
+        clientSecret: '',
         callbackURL: 'http://localhost:5000/auth/facebook/callback'
       },
     },
@@ -15,8 +15,8 @@ if (process.env.NODE_ENV === 'test') {
     JWT_SECRET: 'codeworkrauthentication',
     oauth: {
       facebook: {
-        clientID: '642246559554873',
-        clientSecret: 'de9378a0b728fc7fa3d7463bfd738231',
+        clientID: '',
+        clientSecret: '',
         callbackURL: 'http://localhost:5000/auth/facebook/callback'
       },
     },
